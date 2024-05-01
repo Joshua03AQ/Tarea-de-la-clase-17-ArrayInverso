@@ -31,7 +31,7 @@ public class ArrayInverso {
                 for (int i = 0; i < arreglo.length; i++) {
                         System.out.println("Ingrese el valor ["+i+"]");
                     arreglo[i] = sc.nextInt();
-                    repetir = (arreglo[i]>=tam)?false:true;
+                    repetir = (arreglo[i]<=tam && arreglo[i]>=tam)?false:true;
                 }
             } catch (Exception e) {
                 System.out.println(e);
@@ -47,7 +47,6 @@ public class ArrayInverso {
         }
     }
     public static void inverso(int[]Inv){
-        
         for (int i = Inv.length - 1; i >= 0; i--) {
             System.out.println(Inv[i]);
         }

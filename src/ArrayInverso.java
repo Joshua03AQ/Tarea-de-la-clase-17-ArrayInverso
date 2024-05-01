@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ArrayInverso {
     public static Scanner sc = new Scanner(System.in);
     public static int tam = 0;
+    public static boolean repetir = true;
     public static void main(String[] args) {
         boolean continuar = true;
         do {
@@ -25,18 +26,18 @@ public class ArrayInverso {
     }
     public static int[] llenado(){
         int[] arreglo = new int[tam];
-        boolean repetir = true;
         do {
-            try {
+            try{
                 for (int i = 0; i < arreglo.length; i++) {
                         System.out.println("Ingrese el valor ["+i+"]");
                     arreglo[i] = sc.nextInt();
-                    repetir = (arreglo[i]<=tam && arreglo[i]>=tam)?false:true;
                 }
+                repetir=false;
             } catch (Exception e) {
                 System.out.println(e);
                 System.out.println("Ingrese valores numericos");
                 sc.nextLine();
+                continue;
             }
         } while (repetir);
         return arreglo;

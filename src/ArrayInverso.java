@@ -25,14 +25,23 @@ public class ArrayInverso {
     }
     public static int[] llenado(){
         int[] arreglo = new int[tam];
-        for (int i = 0; i < arreglo.length; i++) {
-            System.out.println("Ingrese el valor ["+i+"]");
-            arreglo[i] = sc.nextInt();
-        }
+        boolean repetir = true;
+        do {
+            try {
+                for (int i = 0; i < arreglo.length; i++) {
+                        System.out.println("Ingrese el valor ["+i+"]");
+                    arreglo[i] = sc.nextInt();
+                    repetir = (arreglo[i]>=tam)?false:true;
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+                System.out.println("Ingrese valores numericos");
+                sc.nextLine();
+            }
+        } while (repetir);
         return arreglo;
     }
     public static void mostrar(int[]a){
-          
         for (int i : a) {
             System.out.println(i);
         }
